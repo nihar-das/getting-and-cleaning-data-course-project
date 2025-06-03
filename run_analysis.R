@@ -47,5 +47,5 @@ main <- function() {
   activity_labels <- read.table(file.path(base_path, "activity_labels.txt"), header = FALSE, col.names = c("activity_id", "activity_name"))
   mean_std_data <- merge(mean_std_by_activity_subject_data, activity_labels, by = "activity_id", all.x = TRUE)
   
-  write.table(mean_std_by_activity_subject_data, "tidy_data.txt", sep = "\t")
+  write.table(mean_std_by_activity_subject_data, "tidy_data.txt", row.name = FALSE)
 }
